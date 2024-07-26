@@ -1,0 +1,133 @@
+/* Gaya Teks Utama */
+
+/* Gaya untuk elemen teks utama, dengan efek gradien dan animasi */
+.teks {
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    margin: 30px auto; /* Margin atas dan bawah, auto di kiri dan kanan untuk pusatkan */
+    font-size: 32px; /* Ukuran font teks utama */
+    font-weight: bold; /* Menjadikan teks lebih tebal */
+    background: linear-gradient(135deg, #FFC3A0 0%, #FFAFBD 100%); /* Gradien latar belakang untuk efek warna */
+    -webkit-background-clip: text; /* Memotong latar belakang pada teks */
+    -webkit-text-fill-color: transparent; /* Mengisi warna teks dengan transparan untuk efek gradien */
+    animation: animate 10s linear infinite; /* Menambahkan animasi untuk latar belakang gradien */
+}
+
+/* Keyframes untuk animasi gradien */
+@keyframes animate {
+    to {
+        background-position: 400%; /* Memindahkan posisi latar belakang gradien untuk animasi */
+    }
+}
+
+/* Gaya Kontainer Kotak */
+
+/* Gaya untuk kontainer kotak yang membungkus produk */
+#box {
+    padding: 20px; /* Padding di sekitar konten kontainer */
+    display: flex; /* Menggunakan Flexbox untuk tata letak */
+    justify-content: center; /* Menyebarkan konten secara horizontal di tengah */
+    flex-wrap: wrap; /* Mengizinkan kotak untuk membungkus jika melebihi lebar kontainer */
+}
+
+/* Layout Grid untuk Kotak Produk */
+
+/* Gaya untuk tata letak grid produk */
+.tam {
+    display: grid; /* Menggunakan Grid Layout untuk tata letak */
+    grid-template-columns: repeat(3, 1fr); /* Tiga kotak per baris */
+    gap: 30px; /* Jarak antara kotak */
+    justify-content: center; /* Pusatkan grid dalam kontainer */
+    width: 100%; /* Lebar penuh dari kontainer induk */
+    max-width: 1200px; /* Batas lebar maksimum grid */
+    margin: 0 auto; /* Pusatkan grid secara horizontal */
+}
+
+/* Gaya untuk kotak keranjang */
+.cart {
+    display: flex; /* Menggunakan Flexbox untuk tata letak internal */
+    flex-direction: column; /* Mengatur item di dalam kolom */
+    align-items: center; /* Menyelaraskan item secara horizontal di tengah */
+    width: 400px; /* Lebar tetap kotak */
+    background-color: white; /* Warna latar belakang putih */
+    border-radius: 30px; /* Menambahkan sudut melengkung pada kotak */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan kotak */
+    padding: 15px; /* Padding di dalam kotak */
+    transition: transform 0.3s, box-shadow 0.3s; /* Menambahkan transisi untuk efek hover */
+}
+
+/* Efek hover pada kotak keranjang */
+.cart:hover {
+    transform: translateY(-10px); /* Menggeser kotak ke atas saat hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan lebih besar saat hover */
+}
+
+/* Gaya untuk gambar di dalam kotak keranjang */
+.gg {
+    width: 100%; /* Lebar penuh dari kontainer induk */
+    height: 200px; /* Tinggi tetap gambar */
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa terdistorsi */
+    border-radius: 10px; /* Menambahkan sudut melengkung pada gambar */
+}
+
+/* Gaya untuk elemen harga dan judul di dalam kotak keranjang */
+.price, .title {
+    margin-top: 10px; /* Margin atas untuk jarak */
+    font-size: 16px; /* Ukuran font harga dan judul */
+    font-weight: 500; /* Menjadikan font sedikit tebal */
+}
+
+/* Gaya khusus untuk harga */
+.price {
+    color: #FF6584; /* Warna teks harga */
+}
+
+/* Gaya khusus untuk judul */
+.title {
+    color: #555; /* Warna teks judul */
+}
+
+/* Gaya Responsif */
+
+/* Responsivitas untuk layar dengan lebar maksimum 1336px */
+@media (max-width: 1336px) {
+    .tam {
+        grid-template-columns: repeat(2, 1fr); /* Dua kotak per baris pada layar lebih kecil */
+    }
+}
+
+/* Responsivitas untuk layar dengan lebar maksimum 1030px */
+@media (max-width: 1030px) {
+    .tam {
+        grid-template-columns: 1fr; /* Satu kotak per baris pada layar lebih kecil */
+    }
+
+    .teks {
+        font-size: 28px; /* Ukuran font teks utama pada layar lebih kecil */
+    }
+
+    .cart {
+        width: 90%; /* Sesuaikan lebar kotak untuk layar lebih kecil */
+        padding: 10px; /* Sesuaikan padding untuk layar lebih kecil */
+    }
+
+    .gg {
+        height: 150px; /* Sesuaikan tinggi gambar untuk layar lebih kecil */
+    }
+}
+
+/* Responsivitas untuk layar dengan lebar maksimum 625px */
+@media (max-width: 625px) {
+    .teks {
+        font-size: 24px; /* Ukuran font teks utama pada layar sangat kecil */
+    }
+
+    .cart {
+        width: 100%; /* Lebar penuh untuk layar kecil */
+        padding: 5px; /* Sesuaikan padding untuk layar sangat kecil */
+    }
+
+    .gg {
+        height: 120px; /* Sesuaikan tinggi gambar untuk layar sangat kecil */
+    }
+}
